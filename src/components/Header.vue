@@ -2,13 +2,20 @@
   <div class="header_out">
     <div class="header">
       <div class="header_right">
-        <span v-for="(i, index) in data.tabList" @click="toGo(i.path, index)"
-          :class="{ fontColor: fontColor == index }">
+        <span
+          v-for="(i, index) in data.tabList"
+          @click="toGo(i.path, index)"
+          :class="{ fontColor: fontColor == index }"
+        >
           {{ i.title }}
         </span>
       </div>
       <!-- 未登录展示登录注册 -->
-      <div class="header_left" @click="toGo('/loginRegister')" v-show="!showLoginRegister">
+      <div
+        class="header_left"
+        @click="toGo('/loginRegister')"
+        v-show="!showLoginRegister"
+      >
         <a-space>
           <user-outlined :style="{ fontSize: '20px', marginRight: '5px' }" />
         </a-space>
@@ -17,21 +24,25 @@
       </div>
       <!-- 登录展示头像 -->
       <div class="header_img" v-show="showLoginRegister">
-        <img :src="data.userInfo.headImg" @click="toPersonal">
-        <a-card size="small" :title="data.userInfo.username" style="width: 150px" class="userMess">
+        <img :src="data.userInfo.headImg" @click="toPersonal" />
+        <a-card
+          size="small"
+          :title="data.userInfo.username"
+          style="width: 150px"
+          class="userMess"
+        >
           <div @click="outLogin" class="outLogin">退出登录</div>
         </a-card>
       </div>
     </div>
   </div>
-
 </template>
 <script setup>
-import { UserOutlined } from '@ant-design/icons-vue';
-import { message } from 'ant-design-vue';
+import { UserOutlined } from '@ant-design/icons-vue'
+import { message } from 'ant-design-vue'
 import { onMounted, reactive, ref } from 'vue'
-import router from '../router/index';
-import emitter from '../utils/eventBus';
+import router from '../router/index'
+import emitter from '../utils/eventBus'
 import { getUserInfo } from '../api/accountServer'
 import noHeader from '../assets/noHeader.png'
 /**
@@ -43,14 +54,14 @@ const data = reactive({
     headImg: '',
   },
   tabList: [
-    { title: '小滴短链平台', path: '/home' },
+    { title: '卓晟短链服务平台', path: '/home' },
     { title: '个人空间', path: '/personal' },
     { title: '我的短链', path: '/shortChain' },
     { title: '定价方案', path: '/scheme' },
     { title: '报表demo', path: '/demo' },
-  ]
+  ],
 })
-const showLoginRegister = ref(localStorage.getItem('token') || '');
+const showLoginRegister = ref(localStorage.getItem('token') || '')
 const fontColor = ref(localStorage.getItem('tabIndex') || 0)
 
 /**
@@ -106,7 +117,6 @@ const outLogin = () => {
   showLoginRegister.value = false
 }
 
-
 /**
  * 监听登录
  */
@@ -116,9 +126,8 @@ onMounted(() => {
     getUserInfoData()
   })
 })
-
 </script>
-<style lang='less' scoped>
+<style lang="less" scoped>
 @import '~@/style/commonColor.less';
 
 .edu {
@@ -151,9 +160,8 @@ onMounted(() => {
       color: @minorColor;
     }
 
-
     .header_left {
-      cursor: pointer
+      cursor: pointer;
     }
 
     .header_img {
@@ -192,7 +200,7 @@ onMounted(() => {
 
     .header_right {
       .fontColor {
-        color: @minorColor
+        color: @minorColor;
       }
 
       span {
@@ -209,7 +217,6 @@ onMounted(() => {
           color: @minorColor;
         }
       }
-
     }
   }
 }

@@ -4,9 +4,11 @@
       <!-- 首页内容1 -->
       <div class="main_one_out">
         <div class="main_one">
-          <div class="title">小滴短链平台</div>
+          <div class="title">卓晟短链服务平台</div>
           <div class="describe">简单易用的渠道短链接统计工具</div>
-          <a-button shape="round" @click="toGo" class="button">创建短连接</a-button>
+          <a-button shape="round" @click="toGo" class="button"
+            >创建短连接</a-button
+          >
         </div>
       </div>
 
@@ -20,13 +22,13 @@
       <!-- 首页内容4 -->
       <div class="main_four_out">
         <div class="main_four">
-          <div class="title">
-            简单易用的渠道短链接统计工具
-          </div>
+          <div class="title">简单易用的渠道短链接统计工具</div>
           <a-button @click="toGo">开始使用</a-button>
         </div>
       </div>
-      <div class="beian">Copyright © 2018 Company,lnc.粤ICP备15092968号 Trems</div>
+      <div class="beian">
+        Copyright © 2018 Company,lnc.粤ICP备15092968号 Trems
+      </div>
     </div>
   </div>
 </template>
@@ -34,14 +36,14 @@
 import Tab from './components/Tab.vue'
 import Description from './components/Description.vue'
 import router from '../../router/index'
-import emitter from '../../utils/eventBus';
+import emitter from '../../utils/eventBus'
 
 const toGo = () => {
   router.push('/shortChain')
   emitter.emit('shortChain', 2)
 }
 </script>
-<style lang='less' scoped>
+<style lang="less" scoped>
 @import '~@/style/commonColor.less';
 
 :deep(.ant-btn:hover) {
@@ -63,7 +65,7 @@ const toGo = () => {
     }
 
     .main_four_out {
-      background-color: #2C3134;
+      background-color: #2c3134;
       height: 300px;
       color: #fff;
 
