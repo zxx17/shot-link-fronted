@@ -59,7 +59,7 @@ export const addShortChain = (data) => {
 export const changeShortChain = (data) => {
   return request({
     method: 'post',
-    url: '/link-server//api/link/v1/update',
+    url: '/link-server/api/link/v1/update',
     data,
   });
 };

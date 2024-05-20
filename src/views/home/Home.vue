@@ -27,24 +27,24 @@
         </div>
       </div>
       <div class="beian">
-        Copyright © 2018 Company,lnc.粤ICP备15092968号 Trems
+        <a href="https://beian.miit.gov.cn/" target="_blank">闽---</a>
       </div>
     </div>
   </div>
 </template>
 <script setup>
-import Tab from './components/Tab.vue'
-import Description from './components/Description.vue'
-import router from '../../router/index'
-import emitter from '../../utils/eventBus'
+import Tab from "./components/Tab.vue";
+import Description from "./components/Description.vue";
+import router from "../../router/index";
+import emitter from "../../utils/eventBus";
 
 const toGo = () => {
-  router.push('/shortChain')
-  emitter.emit('shortChain', 2)
-}
+  router.push("/shortChain");
+  emitter.emit("shortChain", 2);
+};
 </script>
 <style lang="less" scoped>
-@import '~@/style/commonColor.less';
+@import "~@/style/commonColor.less";
 
 :deep(.ant-btn:hover) {
   border-color: @minorColor;
@@ -86,7 +86,7 @@ const toGo = () => {
     }
 
     .main_one_out {
-      background: url('../../assets/bg.jpg') no-repeat;
+      background: url("../../assets/bg.jpg") no-repeat;
       background-position: center;
 
       .main_one {
